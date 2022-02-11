@@ -1,0 +1,7 @@
+Ammarelo ovo claro = #F4DE93
+amarelo ovo escuro = #AE914B
+marrom claro = #564624
+marrom escuro = #3E3023
+verde agua escuro = #14545B
+verde agua = #3A7875
+verde agua claro = #A6F5D8
