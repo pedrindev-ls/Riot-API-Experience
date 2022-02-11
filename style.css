@@ -1,0 +1,12 @@
+.flexing {
+  display: flex;
+}
+
+.search {
+  justify-content: space-around;
+  align-items: center;
+}
+
+#header-img {
+  width: 6%;
+}
