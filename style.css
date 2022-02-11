@@ -1,0 +1,13 @@
+.flexing {
+  display: flex;
+}
+
+.search {
+  justify-content: space-around;
+  align-items: center;
+  background-color: #AE914B;
+}
+
+#header-img {
+  width: 6%;
+}
