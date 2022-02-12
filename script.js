@@ -4,6 +4,7 @@ const splash = document.getElementById('champion-image');
 const champName = document.querySelector('.title-name');
 const nameTitle = document.createElement('p');
 const champLore = document.getElementById('lore');
+const champType = document.getElementById('champion-type');
 const inputButton = document.getElementById('inputButton');
 const inputChamp = document.getElementById('search');
 
@@ -29,12 +30,20 @@ const loreFetch = (rawData) => {
     lore.innerText = rawData.data[chosenOne].lore;
     champLore.appendChild(lore);
 }
+const typeFetch = (rawData) => {
+    const chosenOne = inputChamp.value;
+    champType.innerHTML = '';
+    const type = rawData.data[chosenOne].tags
+    const champRole = document.createElement('p');
+    champRole.innerText = type;
+    champType.appendChild(champRole);
+}
 const dataFetch = async () => {
     const rawData = await fetchChamp();
     idTitleFetch(rawData);
     splashFetch();
-    loreFetch(rawData)
-
+    loreFetch(rawData);
+    typeFetch(rawData);
 };
 inputButton.addEventListener('click', dataFetch);
 
