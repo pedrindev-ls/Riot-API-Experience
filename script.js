@@ -64,6 +64,23 @@ const tipsFetch = (rawData) => {
     champTipsVs.innerHTML = rawData.data[chosenOne].enemytips;
     
 }
+const skillsFetch = (rawData) => {
+    const chosenOne = inputChamp.value;
+    const skillQ = document.createElement('p');
+    const skillW = document.createElement('p');
+    const skillE = document.createElement('p');
+    const skillR = document.createElement('p');
+    const skillQDom = document.getElementById("Q");
+    const skillWDom = document.getElementById('spell-W');
+    const skillEDom = document.getElementById('spell-E');
+    const skillRDom = document.getElementById('spell-R');
+    skillQ.innerHTML = rawData.data[chosenOne].spells[0].name;
+    skillW.innerHTML = rawData.data[chosenOne].spells[1].name;
+    skillE.innerHTML = rawData.data[chosenOne].spells[2].name;
+    skillR.innerHTML = rawData.data[chosenOne].spells[3].name;
+    console.log(skillQDom);
+    skillQDom.appendChild(skillQ);
+}
 const dataFetch = async () => {
     const rawData = await fetchChamp();
     idTitleFetch(rawData);
@@ -72,6 +89,7 @@ const dataFetch = async () => {
     typeFetch(rawData);
     passiveFetch(rawData);
     tipsFetch(rawData);
+    skillsFetch(rawData);
 };
 inputButton.addEventListener('click', dataFetch);
 
