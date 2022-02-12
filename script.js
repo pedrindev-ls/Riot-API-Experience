@@ -6,6 +6,8 @@ const nameTitle = document.createElement('p');
 const champLore = document.getElementById('lore');
 const champType = document.getElementById('champion-type');
 const champPassive = document.getElementById('spells');
+const champTips = document.getElementById('user-text');
+const champTipsVs = document.getElementById('versus-text');
 const inputButton = document.getElementById('inputButton');
 const inputChamp = document.getElementById('search');
 
@@ -56,6 +58,12 @@ const passiveFetch = (rawData) => {
     champPassive.appendChild(passiveDescrip);
     champPassive.appendChild(passiveImg);
 }
+const tipsFetch = (rawData) => {
+    const chosenOne = inputChamp.value;
+    champTips.innerText = rawData.data[chosenOne].allytips;
+    champTipsVs.innerHTML = rawData.data[chosenOne].enemytips;
+    
+}
 const dataFetch = async () => {
     const rawData = await fetchChamp();
     idTitleFetch(rawData);
@@ -63,6 +71,7 @@ const dataFetch = async () => {
     loreFetch(rawData);
     typeFetch(rawData);
     passiveFetch(rawData);
+    tipsFetch(rawData);
 };
 inputButton.addEventListener('click', dataFetch);
 
