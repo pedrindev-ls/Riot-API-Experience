@@ -5,6 +5,7 @@ const champName = document.querySelector('.title-name');
 const nameTitle = document.createElement('p');
 const champLore = document.getElementById('lore');
 const champType = document.getElementById('champion-type');
+const champPassive = document.getElementById('spells');
 const inputButton = document.getElementById('inputButton');
 const inputChamp = document.getElementById('search');
 
@@ -38,12 +39,30 @@ const typeFetch = (rawData) => {
     champRole.innerText = type;
     champType.appendChild(champRole);
 }
+const passiveFetch = (rawData) => {
+    const chosenOne = inputChamp.value;
+    champPassive.innerHTML = '';
+    const passiveName = document.createElement('p');
+    const passiveDescrip = document.createElement('p');
+    const passiveImg = document.createElement('img');
+    const passiveNM = rawData.data[chosenOne].passive.name;
+    const passiveDscrp = rawData.data[chosenOne].passive.description;
+    const passiveAddress = rawData.data[chosenOne].passive.image.full;
+    const passiveIm = `https://ddragon.leagueoflegends.com/cdn/12.3.1/img/passive/${passiveAddress}`
+    passiveName.innerHTML = passiveNM;
+    passiveDescrip.innerHTML = passiveDscrp;
+    passiveImg.src = passiveIm;
+    champPassive.appendChild(passiveName);
+    champPassive.appendChild(passiveDescrip);
+    champPassive.appendChild(passiveImg);
+}
 const dataFetch = async () => {
     const rawData = await fetchChamp();
     idTitleFetch(rawData);
     splashFetch();
     loreFetch(rawData);
     typeFetch(rawData);
+    passiveFetch(rawData);
 };
 inputButton.addEventListener('click', dataFetch);
 
