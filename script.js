@@ -18,7 +18,7 @@ const splashFetch = () => {
     const chosenOne = inputChamp.value;
     splash.innerHTML = '';
     const splashImg = document.createElement('img');
-    const splashChosen = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${chosenOne}_0.jpg`;
+    const splashChosen = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${chosenOne}_0.jpg`;
     splashImg.src = splashChosen;
     splash.append(splashImg);
 }
