@@ -25,28 +25,31 @@ const createChampObject = async () => {
     const currentChamp = await searchChamp(searchInput.value);
     const splashArtEndpoint = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${searchInput.value}_0.jpg`;
     const spellsEndpoint = 'http://ddragon.leagueoflegends.com/cdn/12.3.1/img/spell/';
+    const passiveEndpoint = 'http://ddragon.leagueoflegends.com/cdn/12.3.1/img/passive/'
     
        const champToRender = {
             name:currentChamp.id + ',',
             title: currentChamp.title,
+            splashArt: splashArtEndpoint,
             lore: currentChamp.lore,
             howToPlay: currentChamp.allytips,
             howToCounter: currentChamp.enemytips,
             passive: {
                 name: currentChamp.passive.name, 
                 description: currentChamp.passive.description,
-                icon: currentChamp.passive.image,
+                icon: passiveEndpoint + currentChamp.passive.image.full,
             },
             spells: currentChamp.spells.map((currentSpell) => {
                const spell = {
-                    name: currentSpell.id,
+                    name: currentSpell.name,
                     description: currentSpell.description,
                     icon: spellsEndpoint + currentSpell.image.full
                 }
                 return spell;
             })
         }
-        return console.log(champToRender);
+        console.log(champToRender);
+        return champToRender;
     }
 
 
