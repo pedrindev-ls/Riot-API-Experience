@@ -31,7 +31,7 @@ header, h1 {
 
 ::placeholder {
   color: #AE914B;
-  padding-left: 3px;
+  padding-left: 1px;
 }
 
 input, select, textarea{
@@ -42,7 +42,7 @@ input, select, textarea{
 .inputButton {
   height: 33px;
   color: #AE914B;
-  background-color: #052c2b;
+  background-color: #14555b;
   box-sizing: border-box;
   border-color: white;
   border-radius: 5px;
