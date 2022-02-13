@@ -31,6 +31,11 @@ h2 {
   color:  var(--gold);
   font-weight: 700;
   text-align: center;
+  text-shadow:
+        0.07em 0 black,
+        0 0.07em black,
+        -0.07em 0 black,
+        0 -0.07em black;
 }
 
 p, li {
@@ -169,6 +174,11 @@ border: 2px solid black;
      
    }
 
+   p, li {
+    margin: 0;
+    text-align: justify;
+  }
+
    .champion-image {
     display: none;
   }
@@ -191,15 +201,7 @@ border: 2px solid black;
   .hidden{
     display: none;
   }
-
-
-  p, li {
-    margin: 0;
-    text-align: justify;
-  }
  
- 
-
   #right-section {
     max-width: 85%;
     display: flex;
@@ -210,5 +212,4 @@ border: 2px solid black;
     order: -1;
   }
   
-
 }
