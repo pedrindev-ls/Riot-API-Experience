@@ -80,9 +80,11 @@ const renderHowToPlay = (champName, howToPlay) => {
 
 const renderSplashArt = (splashArt) => {
     img.src = splashArt;
-    mainElement.style.backgroundImage = 'url(' + splashArt + ')'
-    mainElement.style.backgroundSize = 'cover';
-    mainElement.style.backgroundRepeat = "repeat-y";
+    if (window.innerWidth < 600) {
+        mainElement.style.backgroundImage = 'url(' + splashArt + ')'
+        mainElement.style.backgroundSize = 'cover';
+        mainElement.style.backgroundRepeat = "repeat-y";
+    }
 };
 
 const renderPassive = (champPassive) => {
@@ -212,7 +214,6 @@ const showH2Content = (event) => {
 };
 
 const windowResizeBackground = () => {
-    console.log(currentChampImg)
     if (window.innerWidth > 600) {
         mainElement.style.backgroundImage = 'none'
     }
