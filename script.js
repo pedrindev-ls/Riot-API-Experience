@@ -61,6 +61,7 @@ const createChampObject = async () => {
     currentChampSpells = champToRender.spells;
     currentChampImg = champToRender.splashArt;
     renderChamp(champToRender);
+    renderSpellSelected();
 };
 
 const renderName = (name, champTitle) => title.innerText = `${name}, ${champTitle}`;
@@ -221,9 +222,16 @@ const windowResizeBackground = () => {
         mainElement.style.backgroundImage = 'url(' + currentChampImg + ')'
     }
 }
+const aceitaEnter = () => {
+    if (event.keyCode === 13) {
+        createChampObject();
+        return false;
+    }
+}
 
 const addEventListeners = () => {
     searchInputBTN.addEventListener('click', createChampObject);
+    searchInput.addEventListener('keyup', aceitaEnter);
     spellBoxes.forEach((spell) => spell.addEventListener('click', selectSpell));
     h2titles.forEach(tittle => tittle.addEventListener('click', showH2Content));
     window.addEventListener('resize', windowResizeBackground);
