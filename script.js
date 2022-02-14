@@ -22,10 +22,15 @@ let currentChampImg;
 const createELement = (element) => document.createElement(element);
 
 const searchChamp = async (champ) => {
+    
     const endpoint = `http://ddragon.leagueoflegends.com/cdn/12.3.1/data/pt_BR/champion/${champ}.json`
+    try {
     const fetchChamp = await fetch(endpoint);
     const champJson = await fetchChamp.json();
     return champJson.data[champ];
+    } catch {
+        alert('O nome selecionado nao é válido.')
+    }
 };
 
 const checkInput = (input) => {
