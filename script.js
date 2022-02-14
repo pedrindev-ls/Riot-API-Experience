@@ -231,7 +231,3 @@ const addEventListeners = () => {
 window.onload = () => {
     addEventListeners();
 };
-
-module.exports = {
-    createELement,
-  };
