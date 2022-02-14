@@ -61,6 +61,7 @@ const createChampObject = async () => {
     currentChampSpells = champToRender.spells;
     currentChampImg = champToRender.splashArt;
     renderChamp(champToRender);
+    searchInput.value = "";
     renderSpellSelected();
 };
 
