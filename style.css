@@ -1,13 +1,247 @@
-.flexing {
+:root {
+  --darker-green: #052c2b;
+  --dark-green: #14555b;
+  --light-green: #3a7875;
+  --lighter-green: #a4f5d8;
+  --gold: #faee4e;
+}
+
+
+body {
+  background-color: var(--darker-green);
+  color: var(--lighter-green);
+}
+
+h1, h2 {
+  color:  var(--gold);
+  font-weight: 700;
+  text-align: center;
+  text-shadow:
+  0.07em 0 #0E191B,
+  0 0.07em #0E191B,
+  -0.07em 0 #0E191B,
+  0 -0.07em #0E191B;
+}
+
+p, li {
+  margin: 0;
+}
+
+main {
+  padding-top: 5px;
+  background-image: none;
+}
+
+.startHidden {
+  display: none;
+}
+
+.tribeotLogo {
+  width:  280px;
+}
+
+.flexing-search {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-bottom: 33px;
+  background-color: #0E191B;
+  border: 1px solid var(--gold);
+}
+
+.champion-screener {
   display: flex;
 }
 
-.search {
-  justify-content: space-around;
-  align-items: center;
-  background-color: #AE914B;
+.champion-type p {
+  transform-origin: 100 0;
+  transform: rotate(270deg);
 }
 
-#header-img {
-  width: 6%;
+.spells {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.spell-box {
+  padding: 0.1em;
+  line-height: 0;
+  box-shadow: inset 50px 20px 20px #0E191B;
+  border-radius: 5px;
+  padding: 1.2px;
+}
+
+.spell-box img {
+background-color: #fff;
+border: 2px solid black;
+
+}
+.selected {
+ box-shadow: 0 20px 35px rgba(0,0,0,0,3);
+ position: relative;
+  overflow:hidden; 
+  box-shadow: none;
+  border-style: none;
+  padding: 5px;
+}
+
+
+.selected::before{
+  content: '';
+  background-image: conic-gradient( var(--gold) 20deg,
+  transparent 120deg);
+  height: 150%;
+  width: 150%;
+  position: absolute;
+  left: -25%;
+  top:-25%;
+  animation: rotate 2s infinite linear;
+  z-index: -1;
+}
+@keyframes rotate {
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+
+.selected::after{
+  height: 97%;
+  width: 97%;
+  position: absolute;
+  border-radius: 5px;
+  top: 3%;
+  left:3%;
+  display: flex;
+  align-content: center;
+  box-sizing: border-box;
+}
+
+.champion-image {
+  object-fit: contain;
+}
+
+.container-headerBtn {
+  display: flex;
+  justify-content: space-around;
+}
+
+#left-section {
+  max-width: 33%;
+  padding: 10px;
+}
+
+#right-section {
+  max-width: 33%;
+  padding: 10px;
+}
+
+#mid-section {
+  max-width: 33%;
+  padding: 3%;
+}
+
+.spells {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-evenly;
+ 
+}
+
+.spell-box  img{
+  width: 50px;
+  object-fit: fill;
+}
+
+
+.versus-text li:not(:last-child), .user-text li:not(:last-child) {
+  margin-bottom: 1em
+}
+.versus-text ol, .user-text ol {
+  list-style-type: none;
+  padding: 0.5em;
+  text-align: justify;
+  background-color: var(--light-green);
+  border-radius: 5px;
+  box-shadow: 3px 3px 9px 3px var(--dark-green);
+}
+
+.lore, .spell-description {
+  text-align: justify;
+  padding: 0.5em;
+  background-color: var(--light-green);
+  border-radius: 5px;
+  box-shadow: 3px 3px 9px 3px var(--dark-green);
+}
+
+main {
+  position:absolute;
+  z-index: -2;
+}
+
+@media (max-width: 600px){
+  
+  h1 {
+    font-size: 1.4em;
+    font-weight: 800;
+  }
+
+  .tribeotLogo {
+    width: 120px;
+    padding-top: 15px;
+    padding-bottom:  0px;
+  }
+
+  .flexing-search {
+    flex-direction: column-reverse;
+    align-items: center;
+
+  }
+  
+  .champion-screener{
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  #left-section {
+    max-width: 85%;
+    display: flex;
+    flex-direction: column;
+    order: 2;
+
+  }
+    
+  .hidden{
+    display: none;
+  } 
+ 
+  #right-section {
+    max-width: 85%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  .versus-helpers {
+    order: -1;
+  }
+  
+  .splashArt {
+    display: none;
+  }
+ 
+
+.spells {
+  column-gap: 5px;
+  padding-left: 0;
+}
+
+
+.spell-box img {
+  width: 35px;
+}
+
 }

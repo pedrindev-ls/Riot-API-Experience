@@ -1,0 +1,23 @@
+{
+  "name": "Riot-API-Experience",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest --env=jsdom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrindev-ls/Riot-API-Experience.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedrindev-ls/Riot-API-Experience/issues"
+  },
+  "homepage": "https://github.com/pedrindev-ls/Riot-API-Experience#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
