@@ -21,13 +21,14 @@ header, h1 {
   width: 100%;
   align-items: center;
 }
-
+/*
 .search-form {
   display: flex;
   justify-content:center;
   margin: 0px 18px;
   align-items: center;
 }
+*/
 
 ::placeholder {
   color: #AE914B;
@@ -55,6 +56,7 @@ input, select, textarea{
   width: 220px;
   height: 25px;
   border-radius: 5px;
+  border-color: white;
 }
 
 .header-img {
