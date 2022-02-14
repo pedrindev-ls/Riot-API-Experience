@@ -28,16 +28,27 @@ const searchChamp = async (champ) => {
     return champJson.data[champ];
 };
 
+const checkInput = (input) => {
+    let inputAsarray = input.match(/\w+|"[^"]+"/g)
+    const resultArray = [];
+    inputAsarray.forEach((currWord) => {
+        const wordToLower = currWord.toLowerCase();
+        const wordFirstUp = currWord.charAt(0).toUpperCase() + currWord.slice(1);
+        resultArray.push(wordFirstUp);
+    })
+    let resultString = resultArray.join('');
+    return resultString;
+}
+
 const createChampObject = async () => {
-    const InputLowerCase = searchInput.value.toLowerCase();
-    const inputToFirstUpperCase = InputLowerCase.charAt(0).toUpperCase() + InputLowerCase.slice(1);
+    const inputToFirstUpperCase = checkInput(searchInput.value)
     const currentChamp = await searchChamp(inputToFirstUpperCase);
     const splashArtEndpoint = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${inputToFirstUpperCase}_0.jpg`;
     const spellsEndpoint = 'http://ddragon.leagueoflegends.com/cdn/12.3.1/img/spell/';
     const passiveEndpoint = 'http://ddragon.leagueoflegends.com/cdn/12.3.1/img/passive/';
 
     const champToRender = {
-        name: currentChamp.id,
+        name: currentChamp.id.split(/(?=[A-Z])/).join(' '),
         title: currentChamp.title,
         lore: currentChamp.lore,
         howToPlay: currentChamp.allytips,
@@ -210,7 +221,7 @@ const showH2Content = (event) => {
     if (event.target.classList.contains('versus-h2')) {
         hideContent(true, true, false);
         howToCounterTips.classList.toggle('hidden');
-    };    
+    };
 };
 
 const windowResizeBackground = () => {
