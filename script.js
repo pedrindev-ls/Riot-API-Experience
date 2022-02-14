@@ -1,11 +1,6 @@
 const searchInput = document.querySelector('.searchInput');
-const spellQ = document.querySelector('.spellQ');
-const spellW = document.querySelector('.spellW');
-const spellE = document.querySelector('.spellE');
-const spellR = document.querySelector('.spellR');
 const spellP = document.querySelector('.spellPassive');
 const spellName = document.querySelector('.spell-h2');
-const spellImg = document.querySelectorAll('.spellImg');
 const spellBoxes = document.querySelectorAll('.spell-box');
 const spellDescri = document.querySelector('.spell-description-text');
 const h2titles = document.querySelectorAll('h2');
@@ -236,3 +231,7 @@ const addEventListeners = () => {
 window.onload = () => {
     addEventListeners();
 };
+
+module.exports = {
+    createELement,
+  };
