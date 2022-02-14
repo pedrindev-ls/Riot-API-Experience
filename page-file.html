@@ -13,87 +13,80 @@
 
 <body>
   <header class="flexing-search">
-    <h1>Champion Screener</h1>
     <div class="search-form">
-      <label for="search">
-        <input type="text" class="searchInput" name="search" placeholder="Digite o nome de um campeão">
-        <button class="inputButton" name="search">Pesquisar</button>
+      <h1>Escolha o seu Campẽao</h1>
+      <div class='container-headerBtn'>
+        <label for="search">
+          <input type="text" class="searchInput" name="search" placeholder="Digite o nome de um campeão">
+          <button class="inputButton" name="search">Pesquisar</button>
+      </div>
       </label>
     </div>
+    <div>
+      <img src="./Arquivos auxiliares/trybeOTlogo.png" alt="logo da TrybeOt" class='tribeotLogo'>
+    </div>
   </header>
-  <main>
+  <main class='startHidden' id='mainID'>
     <div class='champion-screener'>
       <section id='left-section'>
         <div class="title-name">
-          <h2>Hecarim, a Sombra da Guerra</h2>
+          <h2 class='title'></h2>
         </div>
         <div class="lore hidden">
-          <p>Hecarim é a fusão espectral de homem e animal, amaldiçoado a cavalgar entre as almas dos vivos por toda a eternidade.
-            Quando as Ilhas das Bênçãos caíram nas sombras, esse cavaleiro orgulhoso foi obliterado pelas energias destrutivas da
-            Ruína, junto com toda sua cavalaria e suas montarias. Agora, assim que a Névoa Negra se espalha por Runeterra, ele
-            lidera seu ataque devastador, deleitando-se com a matança e destruindo seus inimigos sob seus cascos de armadura.</p>
+          <p class='lore'></p>
         </div>
         <div class="user-helpers">
           <div class="user-title">
-            <h2>Como jogar de Hecarim</h2>
+            <h2 class='user-h2'></h2>
           </div>
           <div class="user-text">
-            <ol class='hidden'>
-              <li>
-                Espírito do Pavor restaura Vida quando inimigos próximos recebem dano, incluindo o dano causado por aliados. Use-o
-                durante uma grande briga para maximizar a sobrevivência de Hecarim.
-              </li>
-              <li>
-                Ataque Devastador causa mais dano com base na distância percorrida. Tente usar Massacre das Sombras ou feitiços de
-                invocador tais como Fantasma ou Flash para maximizar esse dano.
-              </li>
-              </ol>
+            <ol class='user-ol hidden'>
+            </ol>
           </div>
         </div>
       </section>
       <section id='mid-section'>
         <div class="champion-image">
-          <img src="./Arquivos auxiliares/hecarim Mock/Hecarim_Art.jpg" alt="Splash art do campẽao Hecarim">
+          <img src="./Arquivos auxiliares/hecarim Mock/Hecarim_Art.jpg" alt="Splash art do campẽao" class='splashArt'>
         </div>
       </section>
       <section id='right-section'>
         <div class="spells-text">
           <div class="spell-title">
-            <h2>Massacre das Sombras</h2>
+            <h2 class='spell-h2 hidden'></h2>
           </div>
           <ul class="spells">
-            <li class="spell-box passive">
-              <img src="./Arquivos auxiliares/hecarim Mock/HecarimP.png" alt="Arte da habilidade passiva do campẽao">
-            </li>
-            <li class="spell-box">
-              <img src="./Arquivos auxiliares/hecarim Mock/HecarimQ.png" alt="Arte da habilidade do slot 'Q' do campẽao">
-            </li>
-            <li class="spell-box">
-              <img src="./Arquivos auxiliares/hecarim Mock/HecarimW.png" alt="Arte da habilidade do slot 'W' do campẽao">
-            </li>
-            <li class="spell-box">
-              <img src="./Arquivos auxiliares/hecarim Mock/HecarimE.png" alt="Arte da habilidade do slot 'E' do campẽao">
-            </li>
             <li class="spell-box selected">
-              <img src="./Arquivos auxiliares/hecarim Mock/HecarimR.png" alt="Arte da habiliadde Suprema do campẽao">
+              <img src="./Arquivos auxiliares/hecarim Mock/HecarimP.png" alt="Arte da habilidade passiva do campẽao"
+                class='spellPassive '>
+            </li>
+            <li class="spell-box">
+              <img src="./Arquivos auxiliares/hecarim Mock/HecarimQ.png" alt="Arte da habilidade do slot 'Q' do campẽao"
+                class='spell spellQ '>
+            </li>
+            <li class="spell-box">
+              <img src="./Arquivos auxiliares/hecarim Mock/HecarimW.png" alt="Arte da habilidade do slot 'W' do campẽao"
+                class='spell spellW '>
+            </li>
+            <li class="spell-box">
+              <img src="./Arquivos auxiliares/hecarim Mock/HecarimE.png" alt="Arte da habilidade do slot 'E' do campẽao"
+                class='spell spellE '>
+            </li>
+            <li class="spell-box">
+              <img src="./Arquivos auxiliares/hecarim Mock/HecarimR.png" alt="Arte da habiliadde Suprema do campẽao"
+                class='spell spellR'>
             </li>
             </nav>
         </div>
         <div class="spell-description">
-          <p>"Hecarim invoca cavaleiros espectrais e avança, causando Dano Mágico em linha reta. Hecarim desfere uma onda de
-            choque ao terminar o ataque, fazendo com que inimigos próximos se afastem aterrorizados."</p>
+          <p class='spell-description-text'></p>
         </div>
         <div class="versus-helpers">
           <div class="versus-title">
-            <h2>Como derrotá-lo?</h2>
+            <h2 class='versus-h2'></h2>
           </div>
           <div class="versus-text">
-            <ol class="hidden">
-              <li>Hecarim recebe Vida de inimigos próximos com Espírito do Pavor, mas não tem durabilidade. Use dano em rajada.
-              </li>
-              <li>A ultimate de Hecarim faz com que seus oponentes fujam aterrorizados. Faça sua equipe se espalhar e reduza o
-                poder
-                dele em confrontos.</li>
+            <ol class="versus-ol hidden">
             </ol>
           </div>
         </div>
