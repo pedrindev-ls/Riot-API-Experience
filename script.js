@@ -48,9 +48,9 @@ const checkInput = (input) => {
 const createChampObject = async () => {
     const inputToFirstUpperCase = checkInput(searchInput.value)
     const currentChamp = await searchChamp(inputToFirstUpperCase);
-    const splashArtEndpoint = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${inputToFirstUpperCase}_0.jpg`;
-    const spellsEndpoint = 'http://ddragon.leagueoflegends.com/cdn/12.3.1/img/spell/';
-    const passiveEndpoint = 'http://ddragon.leagueoflegends.com/cdn/12.3.1/img/passive/';
+    const splashArtEndpoint = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${inputToFirstUpperCase}_0.jpg`;
+    const spellsEndpoint = 'https://ddragon.leagueoflegends.com/cdn/12.3.1/img/spell/';
+    const passiveEndpoint = 'https://ddragon.leagueoflegends.com/cdn/12.3.1/img/passive/';
 
     const champToRender = {
         name: currentChamp.id.split(/(?=[A-Z])/).join(' '),
