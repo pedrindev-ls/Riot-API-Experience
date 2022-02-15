@@ -23,10 +23,11 @@ const createELement = (element) => document.createElement(element);
 
 const searchChamp = async (champ) => {
     
-    const endpoint = `http://ddragon.leagueoflegends.com/cdn/12.3.1/data/pt_BR/champion/${champ}.json`
+    const endpoint = `https://ddragon.leagueoflegends.com/cdn/12.3.1/data/pt_BR/champion/${champ}.json`
     try {
     const fetchChamp = await fetch(endpoint);
     const champJson = await fetchChamp.json();
+    console.log(champJson)
     return champJson.data[champ];
     } catch {
         alert('O nome selecionado nao é válido.')
@@ -37,8 +38,8 @@ const checkInput = (input) => {
     let inputAsarray = input.match(/\w+|"[^"]+"/g)
     const resultArray = [];
     inputAsarray.forEach((currWord) => {
-        const wordToLower = currWord.toLowerCase();
-        const wordFirstUp = currWord.charAt(0).toUpperCase() + currWord.slice(1);
+        const currWordLowerC = currWord.toLowerCase();
+        const wordFirstUp = currWordLowerC.charAt(0).toUpperCase() + currWordLowerC.slice(1);
         resultArray.push(wordFirstUp);
     })
     let resultString = resultArray.join('');
@@ -86,12 +87,12 @@ const renderName = (name, champTitle) => title.innerText = `${name}, ${champTitl
 const renderLore = (loreText) => lore.innerText = loreText;
 
 const renderHowToPlay = (champName, howToPlay) => {
-    howToPlayTitle.innerText = `Como jogar de ${champName}`;
+    howToPlayTitle.innerHTML = `Como jogar de ${champName}`;
     howToPlayTips.innerHTML = '';
 
     howToPlay.forEach((tip) => {
         const newTip = createELement('li');
-        newTip.innerText = tip;
+        newTip.innerHTML = tip;
         howToPlayTips.appendChild(newTip);
     });
 };
@@ -107,8 +108,8 @@ const renderSplashArt = (splashArt) => {
 
 const renderPassive = (champPassive) => {
     spellP.src = champPassive.icon;
-    spellName.innerText = champPassive.name;
-    spellDescri.innerText = champPassive.description;
+    spellName.innerHTML = champPassive.name;
+    spellDescri.innerHTML = champPassive.description;
 }
 
 const renderSpells = (champSpells) => {
@@ -119,12 +120,12 @@ const renderSpells = (champSpells) => {
 }
 
 const renderHowToCounter = (champName, howToCounter) => {
-    howToCounterTitle.innerText = `Como enfrentar ${champName}?`;
+    howToCounterTitle.innerHTML = `Como enfrentar ${champName}?`;
     howToCounterTips.innerHTML = '';
 
     howToCounter.forEach((tip) => {
         const newTip = createELement('li');
-        newTip.innerText = tip;
+        newTip.innerHTML = tip;
         howToCounterTips.appendChild(newTip);
     });
 };
@@ -143,29 +144,29 @@ const renderChamp = (champObj) => {
 };
 
 const renderSpellQ = () => {
-    spellDescri.innerText = currentChampSpells[0].description
-    spellName.innerText = currentChampSpells[0].name;
+    spellDescri.innerHTML = currentChampSpells[0].description
+    spellName.innerHTML = currentChampSpells[0].name;
 };
 
 const renderSpellW = () => {
-    spellDescri.innerText = currentChampSpells[1].description
-    spellName.innerText = currentChampSpells[1].name;
+    spellDescri.innerHTML = currentChampSpells[1].description
+    spellName.innerHTML = currentChampSpells[1].name;
 };
 
 const renderSpellE = () => {
-    spellDescri.innerText = currentChampSpells[2].description
-    spellName.innerText = currentChampSpells[2].name;
+    spellDescri.innerHTML = currentChampSpells[2].description
+    spellName.innerHTML = currentChampSpells[2].name;
 };
 
 const renderSpellR = () => {
-    spellDescri.innerText = currentChampSpells[3].description
-    spellName.innerText = currentChampSpells[3].name;
+    spellDescri.innerHTML = currentChampSpells[3].description
+    spellName.innerHTML = currentChampSpells[3].name;
 };
 
 const renderSpellPassive = () => {
     spellP.src = currentChampPassive.icon;
-    spellName.innerText = currentChampPassive.name;
-    spellDescri.innerText = currentChampPassive.description;
+    spellName.innerHTML = currentChampPassive.name;
+    spellDescri.innerHTML = currentChampPassive.description;
 };
 
 const renderSpellSelected = () => {
@@ -242,7 +243,6 @@ const windowResizeBackground = () => {
 const aceitaEnter = () => {
     if (event.keyCode === 13) {
         createChampObject();
-        return false;
     }
 }
 
