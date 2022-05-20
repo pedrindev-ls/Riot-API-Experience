@@ -232,7 +232,6 @@ main {
   .splashArt {
     display: none;
   }
- 
 
 .spells {
   column-gap: 5px;
@@ -244,4 +243,8 @@ main {
   width: 35px;
 }
 
+}
+
+.search-link {
+  color: #faee4e;
 }
